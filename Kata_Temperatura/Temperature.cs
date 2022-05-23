@@ -8,7 +8,6 @@ namespace Kata_Temperatura
 {
 
     /*
-    MultiplyBy(other : Temperature) : Temperature //Same scale as subject
     DivideBy(other : Temperature) : Temperature //Same scale as subject
     */
 
