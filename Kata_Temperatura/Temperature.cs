@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kata_Temperatura
 {
-    internal class Temperature : Attribute
+    public class Temperature : Attribute
     {
         double temperature;
         string scale;
