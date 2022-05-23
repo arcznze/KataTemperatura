@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace Kata_Temperatura
 {
-
-    /*
-    DivideBy(other : Temperature) : Temperature //Same scale as subject
-    */
-
-
     internal class Temperature : Attribute
     {
         double temperature;
@@ -137,6 +131,23 @@ namespace Kata_Temperatura
                     return tempo.temperature * ToCelsius(x);
                 else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
                     return tempo.temperature * ToFahrenheit(x);
+                else
+                    return 0;
+            }
+        }
+        public double DivideBy(double x, string y)
+        {
+            Temperature tempo = new Temperature(temperature, scale);
+            if (tempo.scale == y)
+                return tempo.temperature / x;
+            else
+            {
+                if (tempo.scale == "Kelvin" && y != "Kelvin")
+                    return tempo.temperature / ToKelvin(x);
+                else if (tempo.scale == "Celsius" && y != "Celsius")
+                    return tempo.temperature / ToCelsius(x);
+                else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                    return tempo.temperature / ToFahrenheit(x);
                 else
                     return 0;
             }
