@@ -8,11 +8,9 @@ namespace Kata_Temperatura
 {
 
     /*
-    Add(other : Temperature) : Temperature //Same scale as subject
     Substract(other : Temperature) : Temperature //Same scale as subject
     MultiplyBy(other : Temperature) : Temperature //Same scale as subject
     DivideBy(other : Temperature) : Temperature //Same scale as subject
-    ToString() 
     */
 
 
@@ -92,6 +90,29 @@ namespace Kata_Temperatura
             else
                 return "";
         }
+
+        public double Add(double x, string y)
+        {
+            Temperature tempo = new Temperature(temperature, scale);
+            if (y == tempo.scale)
+                return tempo.temperature + x;
+            else
+            {
+                if (tempo.scale == "Kelvin" && y != "Kelvin")
+                    return tempo.temperature + ToKelvin(x);
+                else if (tempo.scale == "Celsius" && y != "Celsius")
+                    return tempo.temperature + ToCelsius(x);
+                else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                    return tempo.temperature + ToFahrenheit(x);
+                else
+                    return 0;
+            }
+
+        }
+        //public double Substract(double x, string y)
+        //{
+        //    Temperature temperature 
+        //}
 
     }
 }
