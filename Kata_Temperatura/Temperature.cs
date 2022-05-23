@@ -66,7 +66,7 @@ namespace Kata_Temperatura
             else
                 return 0;
         }
-        public string ToString(string x)
+        public string ToStringTempo(string x)
         {
             Temperature tempo = new Temperature(temperature, scale);
             if (tempo.scale == "Kelvin")

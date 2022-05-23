@@ -90,5 +90,23 @@ namespace KataTemperatureTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            double x = 111;
+            string y = "Celsius";
+            string expected = "231.8 ºF";
+
+            Temperature test = new Temperature(x, y);
+            double t = test.ToFahrenheit(x);
+            double a = Math.Round(t, 2);
+            test = new Temperature(a, "Fahrenheit");
+            string actual = test.ToStringTempo(a.ToString());
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
