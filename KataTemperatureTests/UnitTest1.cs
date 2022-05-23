@@ -48,5 +48,47 @@ namespace KataTemperatureTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ToCelsiusTest02()
+        {
+            double x = 426;
+            string y = "Fahrenheit";
+            double expected = 218.89;
+
+            Temperature test = new Temperature(x, y);
+            double t = test.ToCelsius(x);
+            double actual = Math.Round(t, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToFahrenheitTest()
+        {
+            double x = 111;
+            string y = "Fahrenheit";
+            double expected = 231.8;
+
+            Temperature test = new Temperature(x, y);
+            double t = test.ToFahrenheit(x);
+            double actual = Math.Round(t, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToFahrenheitTest02()
+        {
+            double x = 111;
+            string y = "Celsius";
+            double expected = 231.8;
+
+            Temperature test = new Temperature(x, y);
+            double t = test.ToFahrenheit(x);
+            double actual = Math.Round(t, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
