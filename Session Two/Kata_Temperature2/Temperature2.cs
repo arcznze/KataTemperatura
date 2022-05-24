@@ -9,8 +9,6 @@ public class Temperature2
     Substract(other : Temperature) : Temperature //Same scale as subject
     MultiplyBy(other : Temperature) : Temperature //Same scale as subject
     DivideBy(other : Temperature) : Temperature //Same scale as subject
-    Scale : TemperatureScale
-    ToFahrenheit() : Temperature
     ToKelvin() : ...
     ToString() :
         */
@@ -48,6 +46,21 @@ public class Temperature2
                     return x;
                 case temp.scale == "Kelvin":
                     x = (x - 273.15) * 1.8 + 32;
+                    return x;
+                default:
+                    return 0;
+            }
+        }
+        public double ToKelvin(double x)
+        {
+            Temperature2 temp = new Temperature2(temperature, scale);
+            switch (temp.scale)
+            {
+                case temp.scale == "Celsius":
+                    x += 273.15;
+                    return x;
+                case temp.scale == "Fahrenheit":
+                    x = (x - 32) * (5 / 9) + 273;
                     return x;
                 default:
                     return 0;
