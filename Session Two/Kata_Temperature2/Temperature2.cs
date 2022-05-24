@@ -9,7 +9,6 @@ public class Temperature2
     Substract(other : Temperature) : Temperature //Same scale as subject
     MultiplyBy(other : Temperature) : Temperature //Same scale as subject
     DivideBy(other : Temperature) : Temperature //Same scale as subject
-    ToString() :
         */
 		double temperature;
 		string scale;
@@ -79,6 +78,30 @@ public class Temperature2
                     return temp.temperature.ToString() + " ºF";
                 default:
                     return "";
+            }
+        }
+
+        public double Add(double a, string b)
+        {
+            Temperature2 temp = new Temperature2(temperature, scale);
+            switch (temp.scale)
+            {
+                case temp.scale == b:
+                    return temp.temperature + a;
+                case temp.scale == "Celsius" && b != "Celsius":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToCelsius(a);
+                    return temp.temperature + y;
+                case temp.scale == "Fahrenheit" && b != "Fahrenheit":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToFahrenheit(a);
+                    return temp.temperature + y;
+                case temp.scale == "Kelvin" && b != "Kelvin":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToKelvin(a);
+                    return temp.temperature + y;
+                default:
+                    return 0;
             }
         }
     }
