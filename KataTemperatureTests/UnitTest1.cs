@@ -124,5 +124,90 @@ namespace KataTemperatureTests
             Assert.AreEqual(expected, actual);
 
         }
+
+        [TestMethod]
+        public void SubstractTest()
+        {
+            double x = 78;
+            string y = "Fahrenheit";
+            double a = 37;
+            string b = "Celsius";
+            double expected = 20.6;
+
+            Temperature test = new Temperature(x, y);
+
+            double c = test.Substract(a, b);
+            double actual = Math.Round(c, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MultiplyByTest()
+        {
+            double x = 0;
+            string y = "Kelvin";
+            double a = 758;
+            string b = "";
+            double expected = 125.56;
+
+            Temperature test = new Temperature(x, y);
+
+            double c = test.MultiplyBy(a, b);
+            double actual = Math.Round(c, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MultiplyByTest01()
+        {
+            double x = 50;
+            string y = "Kelvin";
+            double a = 758;
+            string b = "Celsius";
+            double expected = 51557.5;
+
+            Temperature test = new Temperature(x, y);
+
+            double c = test.MultiplyBy(a, b);
+            double actual = Math.Round(c, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DivideByTest()
+        {
+            double x = 766;
+            string y = "Fahrenheit";
+            double a = 819;
+            string b = "Kelvin";
+            double expected = 76;
+
+            Temperature test = new Temperature(x, y);
+
+            double c = test.DivideBy(a, b);
+            double actual = Math.Round(c, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void DivideByTest02()
+        {
+            double x = 766;
+            string y = "Kelvin";
+            double a = 819;
+            string b = "Kelvin";
+            double expected = 0.94;
+
+            Temperature test = new Temperature(x, y);
+
+            double c = test.DivideBy(a, b);
+            double actual = Math.Round(c, 2);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
