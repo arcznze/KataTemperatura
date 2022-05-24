@@ -91,11 +91,20 @@ namespace Kata_Temperatura
             else
             {
                 if (tempo.scale == "Kelvin" && y != "Kelvin")
-                    return tempo.temperature + ToKelvin(x);
+                {
+                    Temperature t = new Temperature(x, y);
+                    return tempo.temperature + t.ToKelvin(x);
+                }
                 else if (tempo.scale == "Celsius" && y != "Celsius")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature + ToCelsius(x);
+                }
                 else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature + ToFahrenheit(x);
+                }
                 else
                     return 0;
             }
@@ -109,11 +118,20 @@ namespace Kata_Temperatura
             else
             {
                 if (tempo.scale == "Kelvin" && y != "Kelvin")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature - ToKelvin(x);
+                }
                 else if (tempo.scale == "Celsius" && y != "Celsius")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature - ToCelsius(x);
+                }
                 else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature - ToFahrenheit(x);
+                }
                 else
                     return 0;
             }
@@ -126,11 +144,20 @@ namespace Kata_Temperatura
             else
             {
                 if (tempo.scale == "Kelvin" && y != "Kelvin")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature * ToKelvin(x);
+                }
                 else if (tempo.scale == "Celsius" && y != "Celsius")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature * ToCelsius(x);
+                }
                 else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature * ToFahrenheit(x);
+                }
                 else
                     return 0;
             }
@@ -143,11 +170,20 @@ namespace Kata_Temperatura
             else
             {
                 if (tempo.scale == "Kelvin" && y != "Kelvin")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature / ToKelvin(x);
+                }
                 else if (tempo.scale == "Celsius" && y != "Celsius")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature / ToCelsius(x);
+                }
                 else if (tempo.scale == "Fahrenheit" && y != "Fahrenheit")
+                {
+                    Temperature t = new Temperature(x, y);
                     return tempo.temperature / ToFahrenheit(x);
+                }
                 else
                     return 0;
             }
