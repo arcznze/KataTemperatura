@@ -4,12 +4,6 @@ public class Temperature2
 {
 	public Temperature2()
 	{
-        /*
-        Add(other : Temperature) : Temperature //Same scale as subject
-    Substract(other : Temperature) : Temperature //Same scale as subject
-    MultiplyBy(other : Temperature) : Temperature //Same scale as subject
-    DivideBy(other : Temperature) : Temperature //Same scale as subject
-        */
 		double temperature;
 		string scale;
 
@@ -100,6 +94,75 @@ public class Temperature2
                     Temperature2 x = new Temperature2(a, b);
                     double y = x.ToKelvin(a);
                     return temp.temperature + y;
+                default:
+                    return 0;
+            }
+        }
+        public double Substract(double a, string b)
+        {
+            Temperature2 temp = new Temperature2(temperature, scale);
+            switch (temp.scale)
+            {
+                case temp.scale == b:
+                    return temp.temperature - a;
+                case temp.scale == "Celsius" && b != "Celsius":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToCelsius(a);
+                    return temp.temperature - y;
+                case temp.scale == "Fahrenheit" && b != "Fahrenheit":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToFahrenheit(a);
+                    return temp.temperature - y;
+                case temp.scale == "Kelvin" && b != "Kelvin":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToKelvin(a);
+                    return temp.temperature - y;
+                default:
+                    return 0;
+            }
+        }
+        public double MultiplyBy(double a, string b)
+        {
+            Temperature2 temp = new Temperature2(temperature, scale);
+            switch (temp.scale)
+            {
+                case temp.scale == b:
+                    return temp.temperature * a;
+                case temp.scale == "Celsius" && b != "Celsius":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToCelsius(a);
+                    return temp.temperature * y;
+                case temp.scale == "Fahrenheit" && b != "Fahrenheit":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToFahrenheit(a);
+                    return temp.temperature * y;
+                case temp.scale == "Kelvin" && b != "Kelvin":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToKelvin(a);
+                    return temp.temperature * y;
+                default:
+                    return 0;
+            }
+        }
+        public double DivideBy(double a, string b)
+        {
+            Temperature2 temp = new Temperature2(temperature, scale);
+            switch (temp.scale)
+            {
+                case temp.scale == b:
+                    return temp.temperature / a;
+                case temp.scale == "Celsius" && b != "Celsius":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToCelsius(a);
+                    return temp.temperature / y;
+                case temp.scale == "Fahrenheit" && b != "Fahrenheit":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToFahrenheit(a);
+                    return temp.temperature / y;
+                case temp.scale == "Kelvin" && b != "Kelvin":
+                    Temperature2 x = new Temperature2(a, b);
+                    double y = x.ToKelvin(a);
+                    return temp.temperature / y;
                 default:
                     return 0;
             }
